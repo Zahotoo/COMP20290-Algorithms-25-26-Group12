@@ -16,11 +16,19 @@ public class QuickWithInsertionSort {
     private static final int INSERTION_THRESHOLD = 10;
 
     public static void sort(int[] arr) {
-        // TODO
+        if (arr.length <= 1) return;
+        quickSortHybrid(arr, 0, arr.length - 1);
     }
 
     private static void quickSortHybrid(int[] arr, int low, int high) {
-        // TODO
+        if (high - low < INSERTION_THRESHOLD) {
+            insertionSort(arr, low, high);
+            return;
+        }
+
+        int pivotIndex = QuickSort.partition(arr, low, high);
+        quickSortHybrid(arr, low, pivotIndex - 1);
+        quickSortHybrid(arr, pivotIndex + 1, high);
     }
 
     /**
