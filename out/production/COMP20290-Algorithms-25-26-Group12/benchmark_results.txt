@@ -1,0 +1,29 @@
+=========================================================================
+      BENCHMARK: Improving Counting Sort Algorithm Via Data Locality
+=========================================================================
+
+Warming up...
+Warmup complete.
+
+TABLE 1 STYLE EXPERIMENT
+Classic Counting Sort on Random Input vs Sorted Input
+-------------------------------------------------------------------------
+           n            r     Random T1 (ms)     Sorted T2 (ms)    Speedup T1/T2
+   1,000,000    1,000,000             13.223              5.835             2.27
+   2,000,000    2,000,000             28.965              8.109             3.57
+   3,000,000    3,000,000             54.123             13.222             4.09
+
+TABLE 2 STYLE EXPERIMENT
+Counting Sort with and without Preprocessing (r >> n)
+-------------------------------------------------------------------------
+           n            r    Preprocess (ms)   Local Count (ms)       Hybrid Total      Classic Count
+       1,000    1,000,000              0.060              0.193              0.278              0.779
+       2,000    1,000,000              0.098              0.226              0.377              0.774
+       3,000    1,000,000              0.170              0.223              0.454              0.884
+
+TABLE 3 STYLE EXPERIMENT
+QuickSort vs QuickSort+InsertionSort vs Proposed Hybrid (n = r)
+-------------------------------------------------------------------------
+       n = r          QuickSort    Quick+Insertion    Proposed Hybrid
+   1,000,000             73.089             64.784             43.888
+   2,000,000            154.358            136.869             92.038
